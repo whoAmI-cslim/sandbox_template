@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { newsStories } from './staticData/storyData';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { IconButton } from "@material-tailwind/react";
@@ -33,13 +33,11 @@ function Carousel(props) {
                     <div className="hidden md:flex">
                         {newsStories.length > 0 ? <div className='relative w-[900px] h-[610px]'>
                             {newsStories.length - 1 > cardIndex ?
-
                                 <motion.div initial={{ opacity: .5 }} animate={{ opacity: 1 }} exit={{ opacity: .5 }} transition={{ ease: 'easeInOut', duration: 1 }}>
                                     <NewsCard position="right" story={newsStories[cardIndex + 1]} />
                                 </motion.div>
                                 : <div></div>}
                             {cardIndex != 0 ?
-
                                 <motion.div initial={{ opacity: .5 }} animate={{ opacity: 1 }} exit={{ opacity: .5 }}>
                                     <NewsCard position="left" story={newsStories[cardIndex - 1]} />
                                 </motion.div>
@@ -57,13 +55,13 @@ function Carousel(props) {
                         </div> : <p>No news stories have been created. </p>}
                     </div>
                     <div className=' pt-5 hidden md:block'>
-                    <IconButton onClick={handleDecreaseNews} className=' text-red-600 hover:text-blue-600 border-transparent bg-transparent hover:bg-transparent'>
-                        <FiChevronLeft size={30} />
-                    </IconButton>
-                    <IconButton onClick={handleIncreaseNews} className=' text-red-600 hover:text-blue-600 border-transparent bg-transparent hover:bg-transparent'>
-                        <FiChevronRight size={30} />
-                    </IconButton>
-                </div>
+                        <IconButton onClick={handleDecreaseNews} className=' text-red-600 hover:text-blue-600 border-transparent bg-transparent hover:bg-transparent'>
+                            <FiChevronLeft size={30} />
+                        </IconButton>
+                        <IconButton onClick={handleIncreaseNews} className=' text-red-600 hover:text-blue-600 border-transparent bg-transparent hover:bg-transparent'>
+                            <FiChevronRight size={30} />
+                        </IconButton>
+                    </div>
                 </div>
             </div>
         </div>
